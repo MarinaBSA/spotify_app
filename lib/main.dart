@@ -18,7 +18,7 @@ class App extends StatelessWidget {
               verticalDirection: VerticalDirection.up,
               children: <Widget>[
                 _currentlyPlayingRow,
-                LinearProgressIndicator(backgroundColor: Colors.grey[900], value: .75, valueColor: AlwaysStoppedAnimation<Color>(Colors.white),),
+                _progressIndicator,
               ],
             ),
           ],
@@ -28,6 +28,10 @@ class App extends StatelessWidget {
     );
   }
 }
+
+final LinearProgressIndicator _progressIndicator = LinearProgressIndicator(
+    backgroundColor: Colors.grey[800], value: .75, valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+);
 
 Column _boxColumnGenerator(String imagePath, double boxWidth, String boxTitle,
     {String boxSubtitle}) {
