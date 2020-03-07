@@ -48,6 +48,7 @@ flutter:
     - images/album_cover_4.jpg
     - images/album_cover_5.jpg
     - images/album_cover_6.jpg
+    - images/album_cover_7.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
