@@ -78,7 +78,6 @@ final Widget _appsComponents = Container(
       ),
     ),
     child: ListView(
-      shrinkWrap: true,
       children: <Widget>[
         _settingsBar,
         //_RecentlyPlayedRow,
