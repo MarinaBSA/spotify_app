@@ -30,7 +30,9 @@ class App extends StatelessWidget {
 }
 
 final LinearProgressIndicator _progressIndicator = LinearProgressIndicator(
-    backgroundColor: Colors.grey[800], value: .75, valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+  backgroundColor: Colors.grey[800],
+  value: .75,
+  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
 );
 
 Column _boxColumnGenerator(String imagePath, double boxWidth, String boxTitle,
@@ -180,9 +182,11 @@ class _BottomNavigationBar extends StatelessWidget {
 
 final Widget _currentlyPlayingRow = Container(
   //height: 60,
-  color: Colors.grey[900],
+  //color: Colors.grey[900],
+  decoration: BoxDecoration(
+      color: Colors.grey[900],
+      border: Border(bottom: BorderSide(color: Colors.grey[800], width: .5))),
   child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: <Widget>[
       Image.asset(
         "images/album_cover_7.png",
@@ -190,29 +194,31 @@ final Widget _currentlyPlayingRow = Container(
         width: 70,
       ),
       Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-        //crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text("Only If For A Night \u2022 Florence + The Machine",
-              style: TextStyle(color: Colors.white, fontSize: 13)),
+          Container(
+            margin: EdgeInsets.only(left: 10, top: 10),
+            child: Text(
+              "Only If For A Night \u2022 Florence + The Machine",
+              style: TextStyle(color: Colors.white, fontSize: 13),
+            ),
+          ),
           Row(children: <Widget>[
             IconButton(
                 icon: Icon(Icons.devices, color: Colors.white, size: 20),
                 onPressed: null),
             Text("Devices available",
-                style: TextStyle(color: Colors.white, fontSize: 10))
+                style: TextStyle(color: Colors.white, fontSize: 12))
           ])
         ],
       ),
-      Column(
-        children: <Widget>[
-          IconButton(
+      Container(
+          margin: EdgeInsets.only(bottom: 20, top: 5, right: 10, left: 5),
+          child: IconButton(
             icon:
-                Icon(Icons.play_circle_outline, color: Colors.white, size: 40),
+                Icon(Icons.play_circle_outline, color: Colors.white, size: 50),
             onPressed: null,
-          )
-        ],
-      )
+          ))
     ],
   ),
 );
